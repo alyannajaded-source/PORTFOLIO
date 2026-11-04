@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --color-honeydew: #ecf5e2;
+  --color-tea: #d7e3a4;
+  --color-gold: #d4c04d;
+  --color-fern: #657733;
+  --color-mahogany: #291100;
+  --color-paper: #faf8f2;
+  --color-paper-warm: #f5eedf;
+  --color-terracotta: #c46849;
+  --color-blush: #f4dcd1;
+  --color-sage: #889f77;
+  --color-denim: #3c5268;
+}
+
+:root {
+  --honeydew: #ecf5e2;
+  --tea: #d7e3a4;
+  --gold: #d4c04d;
+  --fern: #657733;
+  --mahogany: #291100;
+  --paper: #faf8f2;
+  --terracotta: #c46849;
+  --blush: #f4dcd1;
+
+  --shadow-paper: 0 1px 0 rgba(41, 17, 0, 0.06), 0 12px 30px -12px rgba(41, 17, 0, 0.22);
+  --shadow-lift: 0 24px 44px -16px rgba(41, 17, 0, 0.32);
+  --shadow-polaroid: 0 10px 25px -5px rgba(41, 17, 0, 0.18), 0 8px 10px -6px rgba(41, 17, 0, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf8f2;
+  color: #291100;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Scrapbook Paper Texture & Utilities */
+.paper {
+  background-color: var(--paper);
+  box-shadow: var(--shadow-paper);
+}
+
+.shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+.shadow-polaroid {
+  box-shadow: var(--shadow-polaroid);
+}
+
+/* Washi Tape Strip Effect */
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 86px;
+  height: 24px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(215, 227, 164, 0.85);
+  border-left: 2px dashed rgba(250, 248, 242, 0.7);
+  border-right: 2px dashed rgba(250, 248, 242, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 20;
+}
+
+.tape-gold::before {
+  background: rgba(212, 192, 77, 0.8);
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.tape-corner-left {
+  position: relative;
+}
+.tape-corner-left::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  width: 60px;
+  height: 20px;
+  transform: rotate(-35deg);
+  background: rgba(244, 220, 209, 0.85);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  z-index: 20;
+}
+
+.tape-corner-right {
+  position: relative;
+}
+.tape-corner-right::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  width: 60px;
+  height: 20px;
+  transform: rotate(35deg);
+  background: rgba(215, 227, 164, 0.85);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  z-index: 20;
+}
+
+/* Notebook lined pattern */
+.lined {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 27px,
+    rgba(101, 119, 51, 0.16) 27px 28px
+  );
+}
+
+/* Dot grid paper pattern */
+.dotgrid {
+  background-image: radial-gradient(rgba(101, 119, 51, 0.18) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+/* Corkboard texture for interactive pinboard */
+.corkboard {
+  background-color: #e5cb9f;
+  background-image: 
+    radial-gradient(rgba(139, 87, 42, 0.15) 15%, transparent 16%),
+    radial-gradient(rgba(88, 54, 25, 0.12) 15%, transparent 16%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+/* Postage Stamp Border Effect */
+.postage-stamp {
+  border: 1px dashed rgba(41, 17, 0, 0.25);
+  box-shadow: 0 0 0 4px #faf8f2;
+}
+
+/* Continuous Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating animation */
+@keyframes floaty {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(calc(var(--r, 0deg) + 4deg));
+  }
+}
+
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Slow spin */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-gentle {
+  animation: pulse-gentle 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ecf5e2;
+}
+::-webkit-scrollbar-thumb {
+  background: #657733;
+  border-radius: 9999px;
+  border: 2px solid #ecf5e2;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4d5b27;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .floaty, .spin-slow, .pulse-gentle {
+    animation: none;
+  }
+}

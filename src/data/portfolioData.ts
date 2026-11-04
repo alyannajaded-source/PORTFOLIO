@@ -1,0 +1,305 @@
+import alyannaPortrait from '../assets/alyanna_portrait.jpg';
+import alyannaSmiling from '../assets/alyanna_smiling.jpg';
+import artPalette from '../assets/art_palette.jpg';
+import masbateLighthouse from '../assets/masbate_lighthouse.jpg';
+import { Project, EducationItem, ExperienceItem, HobbyItem, SkillCategory, GuestNote } from '../types';
+
+export const portfolioOwner = {
+  fullName: "Alyanna Jade P. Dagohoy",
+  preferredName: "Alyanna Jade",
+  studentId: "24870404",
+  birthday: "April 12, 2006",
+  hometown: "Poblacion, Pio V. Corpus, Masbate",
+  college: "University of Cebu",
+  collegeStanding: "Third-year college student",
+  email: "alyannajaded@gmail.com",
+  handle: "@alyannajade",
+  tagline: "Third-year college student & creative learner",
+  bio: "Hi! I am Alyanna Jade P. Dagohoy from Poblacion, Pio V. Corpus, Masbate. Currently, I am a third-year college student at the University of Cebu. I love reading, drawing, gaming, and exploring technology while continuously cultivating my skills.",
+  avatar: alyannaSmiling,
+  portraitPhoto: alyannaPortrait,
+  artPhoto: artPalette,
+  fieldPhoto: masbateLighthouse,
+  flatlayPhoto: artPalette,
+  est: "2006",
+};
+
+export const deckCards = [
+  { kind: "img" as const, src: alyannaPortrait, label: "hi, it's me" },
+  { kind: "text" as const, tone: "bg-[#D4C04D] text-[#291100]", title: "student id", body: "24870404" },
+  { kind: "img" as const, src: artPalette, label: "desk & sketchbook" },
+  { kind: "text" as const, tone: "bg-[#657733] text-[#ECF5E2]", title: "current stage", body: "3rd Year @ Univ. of Cebu" },
+  { kind: "img" as const, src: masbateLighthouse, label: "Masbate memories" },
+  { kind: "text" as const, tone: "bg-[#D7E3A4] text-[#291100]", title: "hometown", body: "Pio V. Corpus, Masbate" },
+  { kind: "text" as const, tone: "bg-[#291100] text-[#ECF5E2]", title: "birthday", body: "April 12, 2006" },
+];
+
+export const initialEducationData: EducationItem[] = [
+  {
+    id: "elem",
+    stage: "Elementary Education",
+    institution: "Pio V. Corpus Elementary",
+    location: "Pio V. Corpus, Masbate",
+    years: "2012–2018",
+    isCurrent: false,
+    description: "Built foundational literacy, arithmetic, and early passion for drawing, reading, and creative crafts.",
+    tone: "bg-[#ECF5E2]",
+    iconType: "pencil",
+  },
+  {
+    id: "jhs",
+    stage: "Junior High School",
+    institution: "Cataingan National High School",
+    location: "Cataingan, Masbate",
+    years: "2018–2022",
+    isCurrent: false,
+    description: "Explored science, mathematics, computer basics, and discovered interest in digital arts and problem-solving.",
+    tone: "bg-[#D7E3A4]",
+    iconType: "backpack",
+  },
+  {
+    id: "shs",
+    stage: "Senior High School",
+    institution: "Cataingan Senior High",
+    location: "Cataingan, Masbate",
+    years: "2022–2024",
+    isCurrent: false,
+    description: "Deepened academic preparation, time management, collaborative team projects, and basic computer fundamentals.",
+    tone: "bg-[#D4C04D]",
+    iconType: "book",
+  },
+  {
+    id: "college",
+    stage: "College Education",
+    institution: "University of Cebu",
+    location: "Cebu City, Philippines",
+    years: "2024–Present",
+    isCurrent: true,
+    currentNote: "Currently a third-year college student",
+    description: "Pursuing higher education, developing basic programming, analytical problem solving, and technological competencies.",
+    tone: "bg-[#657733] text-[#ECF5E2]",
+    iconType: "graduation-cap",
+  },
+];
+
+export const hobbiesData: HobbyItem[] = [
+  {
+    emoji: "📖",
+    name: "Reading",
+    note: "Immersing in novels, fiction, creative stories, and learning materials that broaden perspective.",
+    tone: "bg-[#D7E3A4]",
+    r: -4,
+    funDetail: "Favorite quiet pastime: reading cozy books with a cup of tea",
+  },
+  {
+    emoji: "✏️",
+    name: "Drawing",
+    note: "Sketching illustrations, visual doodles, character designs, and expressing ideas on paper.",
+    tone: "bg-[#ECF5E2]",
+    r: 3.5,
+    funDetail: "Filled notebooks with character sketches, pencil studies, and concepts",
+  },
+  {
+    emoji: "🎮",
+    name: "Playing Games",
+    note: "Enjoying cozy video games, adventure puzzles, and engaging games for relaxation and focus.",
+    tone: "bg-[#D4C04D]",
+    r: -3,
+    funDetail: "Love immersive worlds, casual multiplayer, and cozy gaming sessions",
+  },
+  {
+    emoji: "🎧",
+    name: "Listening to Music",
+    note: "Soundtracks for studying, drawing sessions, daily walks, and winding down at the end of the day.",
+    tone: "bg-[#657733] text-[#ECF5E2]",
+    r: 4,
+    funDetail: "Curated playlists for study focus, chill vibes, and upbeat creative flow",
+  },
+];
+
+export const personalCoreSkills = [
+  { name: "Basic Computer Skills", desc: "Proficient navigation, file management, document processing, and digital workflows", icon: "💻" },
+  { name: "Creativity and Drawing", desc: "Visual storytelling, freehand sketching, layout composition, and concept ideation", icon: "🎨" },
+  { name: "Reading and Comprehension", desc: "Deep analytical reading, rapid concept grasping, and synthesizing detailed information", icon: "📚" },
+  { name: "Problem-Solving", desc: "Approaching challenges methodically with patience, logic, and creative solutions", icon: "🧩" },
+  { name: "Attention to Detail", desc: "Careful precision in review, consistency in layout, and meticulous presentation", icon: "🔍" },
+  { name: "Basic Programming", desc: "Understanding algorithmic logic, syntax fundamentals, and web development basics", icon: "⚡" },
+  { name: "Time Management", desc: "Balancing academic requirements, deadlines, personal studies, and creative pursuits", icon: "⏳" },
+  { name: "Willingness to Learn", desc: "Eager curiosity to acquire new technologies, accept constructive feedback, and grow", icon: "🌱" },
+];
+
+// Preserving existing toolbox from draft website without replacing or inventing new technical skills
+export const skillsData: SkillCategory[] = [
+  {
+    group: "Technical & Code",
+    tone: "bg-[#ECF5E2]",
+    description: "Bringing paper sketches to life in the browser with delightful motion",
+    items: ["HTML & CSS", "JavaScript", "React", "p5.js", "Webflow"],
+  },
+  {
+    group: "Design",
+    tone: "bg-[#D7E3A4]",
+    description: "Typography, editorial structure, tactile identities, and visual craftsmanship",
+    items: ["Branding", "Editorial layout", "Typography", "UI / UX", "Illustration"],
+  },
+  {
+    group: "Tools",
+    tone: "bg-[#D4C04D]",
+    description: "Everyday workspace tools of choice for sketching and production",
+    items: ["Figma", "Illustrator", "InDesign", "Photoshop", "After Effects", "Procreate"],
+  },
+  {
+    group: "Other",
+    tone: "bg-[#657733] text-[#ECF5E2]",
+    description: "Communication, teamwork, workshops, and creative photography",
+    items: ["Public speaking", "Team leading", "Workshops", "Photography"],
+  },
+];
+
+export const projectsData: Project[] = [
+  {
+    id: "creative-sketchbook",
+    title: "Personal Sketchbook & Art Folio",
+    subtitle: "Hand-drawn character studies & doodles",
+    category: "branding",
+    categoryLabel: "Drawing & Art",
+    year: "2024 — Present",
+    client: "Personal Exploration",
+    role: "Artist & Illustrator",
+    tone: "bg-[#ECF5E2]",
+    tapeColor: "bg-[#D7E3A4]/90",
+    coverImage: artPalette,
+    accentColor: "#657733",
+    summary: "A collection of pencil studies, character illustrations, and botanical doodles exploring light, shading, and emotional expression.",
+    overview: "This personal sketchbook project documents my journey in freehand drawing and digital illustration. Focusing on human expressions, cozy environmental backgrounds, and warm color palettes.",
+    challenges: "Finding time alongside university coursework to maintain a consistent daily sketchbook discipline.",
+    deliverables: ["Pencil sketches", "Digital illustration studies", "Character concept sheets"],
+    tools: ["Pencil & Paper", "Procreate", "Photoshop"],
+    quote: "'Drawing is how I make sense of the world and capture quiet moments.'",
+    galleryImages: [
+      {
+        title: "Study in Shading & Form",
+        description: "Exploring pencil cross-hatching and tonal contrasts in natural lighting.",
+        badge: "Pencil Sketch",
+      },
+      {
+        title: "Digital Art & Color Experiments",
+        description: "Applying soft warm palettes to character concepts and cozy indoor scenes.",
+        badge: "Digital Art",
+      },
+    ],
+    colorPalette: [
+      { name: "Pencil Graphite", hex: "#291100" },
+      { name: "Warm Gold", hex: "#D4C04D" },
+      { name: "Sage Paper", hex: "#D7E3A4" },
+    ],
+    typefaces: ["DM Serif Display", "Caveat"],
+  },
+  {
+    id: "academic-projects",
+    title: "University of Cebu Coursework & Labs",
+    subtitle: "Computer fundamentals & problem-solving",
+    category: "digital",
+    categoryLabel: "Academic & Tech",
+    year: "2024 — Present",
+    client: "University of Cebu",
+    role: "Student & Developer",
+    tone: "bg-[#D7E3A4]",
+    tapeColor: "bg-[#D4C04D]/90",
+    coverImage: alyannaSmiling,
+    accentColor: "#D4C04D",
+    summary: "Academic programming exercises, algorithm problem-solving, and database structure projects completed throughout college years.",
+    overview: "Coursework focused on developing strong foundations in software logic, systematic problem solving, user interfaces, and collaborative academic team projects.",
+    challenges: "Analyzing complex algorithmic requirements and translating user needs into clean, functional code structures.",
+    deliverables: ["Programming Lab Exercises", "Database Schema Designs", "Documentation Reports"],
+    tools: ["HTML/CSS", "JavaScript", "VS Code", "Git"],
+    galleryImages: [
+      {
+        title: "Algorithm Problem Sets",
+        description: "Step-by-step logic tracing and problem decomposition.",
+        badge: "Computer Science",
+      },
+      {
+        title: "Web Interface Layout",
+        description: "Responsive interface structured for readability and accessible user interaction.",
+        badge: "Web Layout",
+      },
+    ],
+    colorPalette: [
+      { name: "Fern Green", hex: "#657733" },
+      { name: "Honeydew", hex: "#ECF5E2" },
+      { name: "Deep Ink", hex: "#291100" },
+    ],
+    typefaces: ["Manrope", "DM Serif Display"],
+  },
+  {
+    id: "reading-reflections",
+    title: "Book & Reading Journal",
+    subtitle: "Comprehension logs & literature insights",
+    category: "editorial",
+    categoryLabel: "Reading & Writing",
+    year: "2023 — Present",
+    client: "Personal Reading Journal",
+    role: "Reader & Reviewer",
+    tone: "bg-[#FAF8F2]",
+    tapeColor: "bg-[#657733]/90",
+    coverImage: masbateLighthouse,
+    accentColor: "#C46849",
+    summary: "A curated collection of annotations, literary reflections, and aesthetic book notes tracking reading habits.",
+    overview: "Combines reading comprehension with visual journaling. Each entry features quotes, chapter summaries, and hand-lettered reflections.",
+    challenges: "Synthesizing lengthy literary texts into concise, beautifully presented takeaways.",
+    deliverables: ["Handwritten Book Log", "Summary Index Cards", "Thematic Reflections"],
+    tools: ["Fountain Pen", "Lined Notebooks", "Highlighters"],
+    galleryImages: [
+      {
+        title: "Annotated Book Pages",
+        description: "Carefully highlighted passages with sticky-note reflections and thematic thoughts.",
+        badge: "Literature",
+      },
+      {
+        title: "Index Card Summaries",
+        description: "Flashcard system organizing characters, themes, and personal learnings.",
+        badge: "Journaling",
+      },
+    ],
+    colorPalette: [
+      { name: "Warm Amber", hex: "#D4C04D" },
+      { name: "Book Parchment", hex: "#FAF8F2" },
+      { name: "Deep Mahogany", hex: "#291100" },
+    ],
+    typefaces: ["DM Serif Display", "Caveat"],
+  },
+];
+
+export const initialGuestNotes: GuestNote[] = [
+  {
+    id: "note-1",
+    author: "College Peer",
+    location: "Cebu City",
+    message: "Inspiring academic journey from Masbate to University of Cebu! Keep shining Alyanna 🌟",
+    date: "Oct 20, 2026",
+    stamp: "🌸",
+    tone: "bg-[#ECF5E2]",
+    rotation: -2,
+  },
+  {
+    id: "note-2",
+    author: "High School Batchmate",
+    location: "Cataingan, Masbate",
+    message: "So proud of your drawings and college progress! Your scrapbook looks amazing!",
+    date: "Oct 15, 2026",
+    stamp: "🎨",
+    tone: "bg-[#D7E3A4]",
+    rotation: 3,
+  },
+  {
+    id: "note-3",
+    author: "Study Group Friend",
+    location: "University of Cebu",
+    message: "Great attention to detail and always willing to help out in group projects! 🌿",
+    date: "Sep 28, 2026",
+    stamp: "📖",
+    tone: "bg-[#D4C04D]",
+    rotation: -1.5,
+  },
+];
